@@ -1,0 +1,33 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "babel-node src/index.js",
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lhuaman12/Challenge-backend---NodeJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lhuaman12/Challenge-backend---NodeJs/issues"
+  },
+  "homepage": "https://github.com/lhuaman12/Challenge-backend---NodeJs#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "nodemon": "^2.0.15"
+  }
+}
