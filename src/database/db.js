@@ -1,4 +1,5 @@
 import config from '../config'
+import { associate } from './asociations';
 
 const { Sequelize } = require('sequelize');
 
@@ -7,9 +8,27 @@ const sequelize = new Sequelize(
     config.DB_USER,
     config.DB_PASSWORD, {
         host: 'localhost',
-        dialect: 'mariadb'
+        dialect: 'mariadb',
+        port: config.DB_PORT
     }
 );
+
+const modelDefiners = [
+	require ('./models/character'),
+	require ('./models/image'),
+	
+];
+
+//console.log(modelDefiners[0]);
+
+
+for(const modelDefiner of modelDefiners){
+    modelDefiner(sequelize);
+}
+
+// associations of models
+associate(sequelize);
+
 
 export default sequelize;
 /*

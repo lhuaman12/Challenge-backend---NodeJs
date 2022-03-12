@@ -2,8 +2,10 @@ import express from 'express'
 import config from './config'
 import authRoutes from './routes/auth.routes'
 import morgan from 'morgan'
-const sequelize = require('./database/db');
-require('./database/asociations');
+
+import sequelize from './database/db'
+//const sequelize = require('./database/db');
+
 
 
 const app = express();

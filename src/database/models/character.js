@@ -1,40 +1,8 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const { DataTypes } = require('sequelize');
 
-class Character extends Model {}
-Character.init({
-    id: {
-        type : DataTypes.INTEGER,
-        primaryKey: true,
-        autoincrement:true,
-        allowNull : false
-    },
-    nombre :{
-        type : DataTypes.STRING,
-        allowNull:false
+module.exports = (sequelize) => {
 
-    },
-    edad : {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-
-    },
-    peso : {
-        type: DataTypes.DECIMAL(6,3),
-        allowNull:false,
-    }
-}, {
-    sequelize,
-    modelName: "character",
-    timestamps: false
-});
-
-export default Character;
-
-/*
-export const CharacterModel = (sequelize,DataTypes)=>{
-
-    return sequelize.define('character',{
+    sequelize.define('Character',{
         id: {
             type : DataTypes.INTEGER,
             primaryKey: true,
@@ -57,8 +25,5 @@ export const CharacterModel = (sequelize,DataTypes)=>{
         }
     });
 
-
 }
-*/
-
 
