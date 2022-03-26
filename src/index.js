@@ -16,9 +16,10 @@ app.set('port',config.PORT);
 
 //middlewares
 app.use(morgan('dev'));
+app.use(express.json());
 
 //routes
-app.use('/auth',authRoutes);
+app.use('/api/auth',authRoutes);
 
 app.listen(app.get('port'),(error)=>{
     if(error)

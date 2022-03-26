@@ -2,6 +2,7 @@ const {DataTypes } = require('sequelize');
 
 module.exports = (sequelize) =>{
     sequelize.define('Image',{
+        /*
         id:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -9,14 +10,10 @@ module.exports = (sequelize) =>{
             allowNull : false
             
         },
+        */
         path: {
             type:DataTypes.STRING,
             allowNull:false,
         }
     })
 }
-
-
-
-
-

@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
 
-    sequelize.define('Film',{
+    sequelize.define('Rol',{
         /*
         id: {
             type : DataTypes.INTEGER,
@@ -14,16 +14,6 @@ module.exports = (sequelize) => {
         nombre :{
             type : DataTypes.STRING,
             allowNull:false
-
-        },
-        calificacion : {
-            type: DataTypes.INTEGER,
-            allowNull:false,
-
-        },
-        fecha_de_creacion : {
-            type: DataTypes.DATE,
-            allowNull:false,
         }
     });
 
