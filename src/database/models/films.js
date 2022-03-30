@@ -11,17 +11,17 @@ module.exports = (sequelize) => {
             allowNull : false
         },
         */
-        nombre :{
+        name :{
             type : DataTypes.STRING,
             allowNull:false
 
         },
-        calificacion : {
+        score : {
             type: DataTypes.INTEGER,
             allowNull:false,
 
         },
-        fecha_de_creacion : {
+        creation_date : {
             type: DataTypes.DATE,
             allowNull:false,
         }

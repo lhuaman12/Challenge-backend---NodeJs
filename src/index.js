@@ -1,6 +1,7 @@
 import express from 'express'
 import config from './config'
 import authRoutes from './routes/auth.routes'
+import characterRoutes from './routes/charactersr.routes'
 import morgan from 'morgan'
 
 import sequelize from './database/db'
@@ -20,6 +21,7 @@ app.use(express.json());
 
 //routes
 app.use('/api/auth',authRoutes);
+app.use('/api/characters',characterRoutes);
 
 app.listen(app.get('port'),(error)=>{
     if(error)

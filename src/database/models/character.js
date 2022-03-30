@@ -11,17 +11,17 @@ module.exports = (sequelize) => {
             allowNull : false
         },
         */
-        nombre :{
+        name :{
             type : DataTypes.STRING,
             allowNull:false
 
         },
-        edad : {
+        age : {
             type: DataTypes.INTEGER,
             allowNull:false,
 
         },
-        peso : {
+        weight : {
             type: DataTypes.DECIMAL(6,3),
             allowNull:false,
         }

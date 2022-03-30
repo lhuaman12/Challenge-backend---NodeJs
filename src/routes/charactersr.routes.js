@@ -1,10 +1,13 @@
 import {Router} from 'express'
-//import personajeCrtl from '../controllers/personajeCtrl'
+import {getAllCharacters,addCharacter,editCharacter,deleteCharacter,getCharacter} from '../controllers/characterController'
 
 
 const router = Router();
 
-router.get('/',);
-router.post('/',);
-router.put('/:id',);
-router.delete('/:id',);
+router.get('/',getAllCharacters);
+router.get('/:id',getCharacter);
+router.post('/',addCharacter);
+router.put('/:id',editCharacter);
+router.delete('/:id',deleteCharacter);
+
+export default router
