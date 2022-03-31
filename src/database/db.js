@@ -30,6 +30,7 @@ for(const modelDefiner of modelDefiners){
     modelDefiner(sequelize);
 }
 
+
 // associations of models
 associate(sequelize);
 

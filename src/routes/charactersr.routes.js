@@ -1,10 +1,10 @@
 import {Router} from 'express'
 import {getAllCharacters,addCharacter,editCharacter,deleteCharacter,getCharacter} from '../controllers/characterController'
-
+import {isAuthenticated} from '../middlewares/auth'
 
 const router = Router();
 
-router.get('/',getAllCharacters);
+router.get('/',isAuthenticated,getAllCharacters);
 router.get('/:id',getCharacter);
 router.post('/',addCharacter);
 router.put('/:id',editCharacter);
