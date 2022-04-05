@@ -2,6 +2,7 @@ import sequelize from "../database/db";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 import config from '../config'
+import { sendEmail } from "../utils/emails";
 
 const { Character, Image, Film, Serie, Genre, Rol, User } = sequelize.models;
 
@@ -43,7 +44,7 @@ export const loginController = async (req, res) => {
 };
 // se registra una persona con el rol de usuario, en otros casos puede ser admin o moderator
 export const signupController = async (req, res) => {
-    const { username, password } = req.body;
+    const { username, password , email } = req.body;
     let checked = true;
   
     if (!username) {
@@ -53,6 +54,11 @@ export const signupController = async (req, res) => {
     if (!password) {
       res.status(400).json({ message: "password field missing" });
       checked = false;
+    }
+
+    if(!email) { 
+        res.status(400).json({ message: "email field missing" });
+        checked = false;
     }
   
     if (checked) {
@@ -69,7 +75,8 @@ export const signupController = async (req, res) => {
             
             const userCreated = await User.create({
               username: username,
-              password: hash
+              password: hash,
+              email:email
             });
 
             const userRol = await Rol.findOne({where:{name:'user'}});
@@ -83,6 +90,7 @@ export const signupController = async (req, res) => {
                 message: "Account registered succesfully",
                 token : token
                });
+            await sendEmail(email,"Bienvenido a disney API","Hola "+username+" bienvenido a la API de disney, ya puedes comenzar a usarla");
           }
         });
       } else {
