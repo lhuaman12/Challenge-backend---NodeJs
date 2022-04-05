@@ -1,24 +1,24 @@
 export const associate = (sequelize) => {
-  const { Character, Image, Film, Serie, Genre, Rol, User } = sequelize.models;
+  const { Character, Image, Movie, Serie, Genre, Rol, User } = sequelize.models;
 
   Character.belongsTo(Image);
   //
-  Film.belongsTo(Image);
-  // Film x Character (many to many)
-  Film.belongsToMany(Character, {
+  Movie.belongsTo(Image);
+  // Movie x Character (many to many)
+  Movie.belongsToMany(Character, {
     through: {
-      model: "film_character",
+      model: "movie_character",
       unique: false,
     },
     foreignKey: "character_id",
     constraints: false,
   });
-  Character.belongsToMany(Film, {
+  Character.belongsToMany(Movie, {
     through: {
-      model: "film_character",
+      model: "movie_character",
       unique: false,
     },
-    foreignKey: "film_id",
+    foreignKey: "movie_id",
     constraints: false,
   });
   // Serie x Character (many to many)
@@ -55,18 +55,18 @@ export const associate = (sequelize) => {
     foreignKey: "serie_id",
     constraints: false,
   });
-  // Genre x film
-  Film.belongsToMany(Genre, {
+  // Genre x Movie
+  Movie.belongsToMany(Genre, {
     through: {
-      model: "film_genre",
+      model: "movie_genre",
       unique: false,
     },
-    foreignKey: "film_id",
+    foreignKey: "Movie_id",
     constraints: false,
   });
-  Genre.belongsToMany(Film, {
+  Genre.belongsToMany(Movie, {
     through: {
-      model: "film_genre",
+      model: "movie_genre",
       unique: false,
     },
     foreignKey: "genre_id",

@@ -5,9 +5,9 @@ import {isAuthenticated} from '../middlewares/auth'
 const router = Router();
 
 router.get('/',isAuthenticated,getAllCharacters);
-router.get('/:id',getCharacter);
-router.post('/',addCharacter);
-router.put('/:id',editCharacter);
-router.delete('/:id',deleteCharacter);
+router.get('/:id',isAuthenticated,getCharacter);
+router.post('/',isAuthenticated,addCharacter);
+router.post('/:id',isAuthenticated,editCharacter);
+router.delete('/:id',isAuthenticated,deleteCharacter);
 
-export default router
+export default router;

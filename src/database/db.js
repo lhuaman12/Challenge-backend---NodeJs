@@ -16,7 +16,7 @@ const sequelize = new Sequelize(
 const modelDefiners = [
 	require ('./models/character'),
 	require ('./models/image'),
-    require ('./models/films'),
+    require ('./models/movie'),
     require ('./models/serie'),
     require('./models/genre'),
     require('./models/user'),

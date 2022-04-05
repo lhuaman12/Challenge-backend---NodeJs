@@ -16,7 +16,7 @@ export const loginController = async (req, res) => {
     console.log(userFound);
     
     if(!userFound){
-        res.status(400).json({status:"username or password do not match"});
+        res.status(400).json({message:"username or password do not match"});
     }
     else {
         console.log(req.body.password);
@@ -25,7 +25,7 @@ export const loginController = async (req, res) => {
             console.error(err);
             
             else if(value==false)
-            res.status(400).json({status:"username or password do not match"});
+            res.status(400).json({message:"username or password do not match"});
 
             else {
                 const token = jwt.sign({id:userFound.id},config.SECRET_CODE,{
@@ -47,11 +47,11 @@ export const signupController = async (req, res) => {
     let checked = true;
   
     if (!username) {
-      res.status(400).json({ error: "user field missing" });
+      res.status(400).json({ message: "user field missing" });
       checked = false;
     }
     if (!password) {
-      res.status(400).json({ error: "password field missing" });
+      res.status(400).json({ message: "password field missing" });
       checked = false;
     }
   
@@ -80,13 +80,13 @@ export const signupController = async (req, res) => {
                 expiresIn: 86400 // 24 horas
             })
             res.status(200).json({
-                status: "Account registered succesfully",
+                message: "Account registered succesfully",
                 token : token
                });
           }
         });
       } else {
-        res.status(400).json({ status: "User already registered" });
+        res.status(400).json({ message: "User already registered" });
       }
     }
   }

@@ -2,6 +2,7 @@ import express from "express";
 import config from "./config";
 import authRoutes from "./routes/auth.routes";
 import characterRoutes from "./routes/charactersr.routes";
+import movieRoutes from "./routes/movie.routes";
 import morgan from "morgan";
 import sequelize from "./database/db";
 import { generateRoles } from "./database/rolesConfig";
@@ -18,6 +19,7 @@ app.use(express.json());
 //routes
 app.use("/api/auth", authRoutes);
 app.use("/api/characters", characterRoutes);
+app.use("/api/movies", movieRoutes);
 
 app.listen(app.get("port"), (error) => {
   if (error) console.log(error);

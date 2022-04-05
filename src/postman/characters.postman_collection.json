@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "291b85be-44e9-423d-951c-8b504c684279",
+		"name": "characters",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener personajes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5MTAyODE1LCJleHAiOjE2NDkxODkyMTV9.JhDbW0LsSzE7Frppz4-gpwtKn4EPb1c7R3S_mX3EIgw"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/characters/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Details about a user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user?id=-31162352",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "-31162352"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-next",
+							"value": "nostrud in exercitation",
+							"description": "A link to the next page of responses"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"id\": 46925908,\n  \"name\": \"elit sed\",\n  \"tag\": \"consectetur velit mollit in\"\n}"
+				},
+				{
+					"name": "unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user?id=-31162352",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "-31162352"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"code\": -62088080,\n  \"message\": \"ea in ullamco\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener personajes segun query",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5MTAyODE1LCJleHAiOjE2NDkxODkyMTV9.JhDbW0LsSzE7Frppz4-gpwtKn4EPb1c7R3S_mX3EIgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/characters/?age=18&name=carlos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters",
+						""
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "18"
+						},
+						{
+							"key": "name",
+							"value": "carlos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar personaje",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5MTAyODE1LCJleHAiOjE2NDkxODkyMTV9.JhDbW0LsSzE7Frppz4-gpwtKn4EPb1c7R3S_mX3EIgw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"juan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/characters/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar personaje",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5MTAyODE1LCJleHAiOjE2NDkxODkyMTV9.JhDbW0LsSzE7Frppz4-gpwtKn4EPb1c7R3S_mX3EIgw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"carlos\",\r\n    \"age\" : \"18\",\r\n    \"weight\":\"55.5\",\r\n    \"path\":\"URL1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/characters/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener personaje por id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5MTAyODE1LCJleHAiOjE2NDkxODkyMTV9.JhDbW0LsSzE7Frppz4-gpwtKn4EPb1c7R3S_mX3EIgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/characters/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar personaje",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ5MTAyODE1LCJleHAiOjE2NDkxODkyMTV9.JhDbW0LsSzE7Frppz4-gpwtKn4EPb1c7R3S_mX3EIgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/characters/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "<Basic Auth Username>",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "<Basic Auth Password>",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
